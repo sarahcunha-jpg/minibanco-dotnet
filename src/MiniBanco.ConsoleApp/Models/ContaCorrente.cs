@@ -12,7 +12,6 @@ namespace MiniBanco.ConsoleApp.Models
         {
             if (limiteChequeEspecial < 0)
                 throw new ArgumentException("O limite do cheque especial não pode ser negativo.");
-
             this.LimiteChequeEspecial = limiteChequeEspecial;
         }
 
@@ -20,13 +19,9 @@ namespace MiniBanco.ConsoleApp.Models
         {
             if (valor <= 0)
                 throw new ArgumentException("O valor do saque deve ser maior que zero.");
-
             decimal limiteDisponivel = this.Saldo + this.LimiteChequeEspecial;
-
             if (valor > limiteDisponivel)
-                throw new SaldoInsuficienteException(
-                    $"Saldo + limite insuficiente. Disponível: R$ {limiteDisponivel:F2}.");
-
+                throw new SaldoInsuficienteException($"Saldo + limite insuficiente. Disponível: R$ {limiteDisponivel:F2}.");
             this.Saldo -= valor;
             RegistrarTransacao("Saque", "Saque", valor);
         }
@@ -38,8 +33,6 @@ namespace MiniBanco.ConsoleApp.Models
         }
 
         public override string ObterTipoConta() => "Conta Corrente";
-
-        public override string ObterAtributoEspecifico() =>
-            $"Limite Cheque Especial: R$ {this.LimiteChequeEspecial:F2}";
+        public override string ObterAtributoEspecifico() => $"Limite Cheque Especial: R$ {this.LimiteChequeEspecial:F2}";
     }
 }
