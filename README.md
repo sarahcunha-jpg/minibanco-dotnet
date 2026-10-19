@@ -76,4 +76,4 @@ cd minibanco-dotnet
 ''Rodar no Terminal :cd src/MiniBanco.ConsoleApp              
                      dotnet run
 
-Ator : Sara Hellen
+Autora : Sara Hellen
