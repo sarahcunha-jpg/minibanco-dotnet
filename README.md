@@ -47,19 +47,26 @@ Construir uma **engine de gestão de contas bancárias** via Console Application
 | **0% – 59%** | 🔴 Conta em Risco | Bloquear aumento de limite e abrir análise de crédito. |
 
 ---
-
 ## 🗂 Estrutura do projeto
+
+```text
 minibanco-dotnet/
 ├── src/
-│ └── MiniBanco.ConsoleApp/
-│ ├── Exceptions
-│ ├── Models/
-│ ├──Services/
-│ ├── MiniBanco.ConsoleApp.csproj
-│ └── Program.cs
+│   └── MiniBanco.ConsoleApp/
+│       ├── Exceptions/
+│       │   └── SaldoInsuficienteException.cs
+│       ├── Models/
+│       │   ├── Conta.cs
+│       │   ├── ContaCorrente.cs
+│       │   ├── ContaPoupanca.cs
+│       │   ├── ContaSalario.cs
+│       │   └── Transacao.cs
+│       ├── Services/
+│       │   └── MotorAnalise.cs
+│       ├── Program.cs
+│       └── MiniBanco.ConsoleApp.csproj
 ├── .gitignore
 └── README.md
-
 ---
 
 ## ▶️ Como executar
